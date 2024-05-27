@@ -1,12 +1,10 @@
-import { ObjectId } from "mongodb";
+import { SessionData } from 'express-session';
+import { Document } from 'mongoose';
 
-export interface User {
-    _id?: ObjectId;
-    username:string;
-    email: string;
+export interface User extends Document {
+    username: string;
     password: string;
-    role: "ADMIN" | "USER";
-    game: string;
+    comparePassword: (candidatePassword: string, cb: any) => void;
 }
 
 declare module 'express-session' {

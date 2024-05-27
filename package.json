@@ -8,6 +8,7 @@
     "express-session": "^1.18.0",
     "lodash.set": "^4.3.2",
     "mongodb": "^6.6.2",
+    "mongoose": "^8.4.0",
     "readline-sync": "^1.4.10"
   },
   "scripts": {

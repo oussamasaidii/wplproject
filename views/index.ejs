@@ -2,29 +2,27 @@
 
 <main>
     <section class="main-login">
-        <article class="left-login">
-            <!---->
-            <h1>Welkom bij TiltedTowers</h1>
-            <!--  <img src="/project/Images/UserLogo.jpg" class="left-login-image" alt="TiltedTowers"> -->
-        </article>
-        <section class="right-login">
-            <section class="card-login">
-                <h1>INLOGGEN</h1>
-                <form action="/login" method="POST"> 
-                    <article class="textfield">
-                        <label for="Username">Gebruikersnaam</label>
-                        <input type="text" name="email" placeholder="Gebruikersnaam"> 
-                    </article>
-                    <article class="textfield">
-                        <label for="password">Wachtwoord</label>
-                        <input type="password" name="password" placeholder="Wachtwoord">
-                    </article>
-                    <button type="submit" class="btn-login"><p>Login</p></button> 
-                </form>
-                <p>Nog geen account? <a class="registration-link" href="registration">Account aanmaken</a></p>
-            </section>
+      <article class="left-login">
+        <!---->
+        <h1>Welkom bij TiltedTowers</h1>
+     <!--  <img src="/project/Images/UserLogo.jpg" class="left-login-image" alt="TiltedTowers"> -->
+      </article>
+      <section class="right-login">
+        <section class="card-login">
+          <h1>INLOGGEN</h1>
+          <article class="textfield">
+            <label for="Username">Gebruikersnaam</label>
+            <input type="text" name="Username" placeholder="Gebruikersnaam">
+          </article>
+          <article class="textfield">
+            <label for="password">Wachtwoord</label>
+            <input type="password" name="password" placeholder="Wachtwoord">
+          </article>
+          <a href="landing-page"><button class="btn-login"><p>Login</p></button></a>
+          <p>Nog geen account? <a class="registration-link" href="registration">Account aanmaken</a></p>
         </section>
+      </section>
     </section>
-</main>
+      </main>
 
 <%- include('partials/footer')%>

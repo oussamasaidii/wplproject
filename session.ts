@@ -1,8 +1,7 @@
-import { Request, Response, NextFunction } from 'express';
-import session from 'express-session';
+import { User } from './types';
+import session, { MemoryStore } from 'express-session';
 import mongoDbSession from 'connect-mongodb-session';
 import { MONGODB_URI } from './database';
-import { User } from './types'; 
 
 const MongoDBStore = mongoDbSession(session);
 
@@ -18,14 +17,8 @@ declare module 'express-session' {
     }
 }
 
-const requireLogin = (req: Request, res: Response, next: NextFunction) => {
-    if (!req.session.user) {
-        return res.redirect('/');
-    }
-    next();
-};
 
-const sessionMiddleware = session({
+export default session({
     secret: process.env.SESSION_SECRET ?? 'TiltedTowers',
     store: mongoStore,
     resave: true,
@@ -34,5 +27,3 @@ const sessionMiddleware = session({
         maxAge: 1000 * 60 * 60 * 24 * 7, // 1 week
     },
 });
-
-export { sessionMiddleware, requireLogin };
