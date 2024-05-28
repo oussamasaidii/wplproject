@@ -2,11 +2,12 @@ import express, { Express } from "express";
 import ejs from "ejs";
 import dotenv from "dotenv";
 import path, { format } from "path";
-import { connect, login } from "/workspaces/wplproject/database";
-import session from "/workspaces/wplproject/session";
-import { secureMiddleware } from "/workspaces/wplproject/session";
+import { connect, login } from "../database";
+import session from "../session";
+import { secureMiddleware } from "../session";
 
-import { User } from "/workspaces/wplproject/interfaces";
+import { User } from "../interfaces";
+
 
 
 export function loginRouter() {
@@ -29,7 +30,7 @@ export function loginRouter() {
                 throw new Error("User not found");
             }
         } catch (error: any) {
-            res.redirect("/login");
+            res.redirect("/login");        
         }
     });
     
